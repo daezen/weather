@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>weather</title>
     <script defer type="module" src="/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-zinc-950 h-screen flex gap-2 items-center justify-center flex-col text-slate-50">
-    <header class="w-screen">
-      <h1 class="text-2xl font-bold text-center">weather</h1>
-    </header>
+    <h1 class="text-2xl font-bold text-center">weather</h1>
     <main class="flex justify-center items-center flex-col gap-2">
-      <form class="flex gap-2 w-96 h-8">
-        <input type="text" class="w-full rounded-md bg-zinc-900" />
-        <button class="h-full aspect-square p-2 bg-zinc-900 rounded-md">
+      <form data-submit class="flex gap-2 w-96 h-8">
+        <input data-input type="text" class="w-full bg-transparent border rounded-lg border-blue-900 backdrop-blur-lg p-4" />
+        <button class="h-full aspect-square p-2 bg-blue-800 rounded-md">
           <svg viewBox="0 0 24 24" fill="currentColor" class="h-full">
             <path
               d="M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z"
@@ -22,9 +24,35 @@
           </svg>
         </button>
       </form>
-      <div class="w-96 h-96 flex justify-center bg-zinc-900 rounded-lg">
-        <h2>Tunja, Boyaca</h2>
-      </div>
+      <section class="w-96 flex items-center flex-col rounded-lg backdrop-blur-lg shadow-2xl border border-blue-900">
+        <header class="flex justify-between w-full p-6 font-semibold">
+          <h2 data-country><span data-city class="font-cursive text-xl">Tunja</span>, Boyaca</h2>
+          <p>Mostly cloudy</p>
+        </header>
+        <div class="relative">
+          <p class="text-6xl font-bold">12</p>
+          <div class="absolute flex gap-2 top-0 left-16 text-zinc-500">
+            <p class="text-lg cursor-pointer">°C</p>
+            <span>|</span>
+            <p class="text-lg cursor-pointer">°F</p>
+          </div>
+        </div>
+        <p class="text-2xl">9</p>
+        <footer class="h-40 w-4/5 rounded-lg flex justify-between gap-6 p-6">
+          <div class="border-blue-900 shadow-lg border p-4 flex-1 rounded-2xl flex items-center justify-center flex-col">
+            <p>Wed</p>
+            <p>14 c</p>
+          </div>
+          <div class="border-blue-900 shadow-lg border p-4 flex-1 rounded-2xl flex items-center justify-center flex-col">
+            <p>Thu</p>
+            <p>11 c</p>
+          </div>
+          <div class="border-blue-900 shadow-lg border p-4 flex-1 rounded-2xl flex items-center justify-center flex-col">
+            <p>Fri</p>
+            <p>15 c</p>
+          </div>
+        </footer>
+      </section>
     </main>
   </body>
 </html>
